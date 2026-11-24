@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: #fff5fa;
+    color: #3b123a;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes sparkleBurst {
+  0% {
+    transform: scale(0.3) rotate(0deg);
+    opacity: 0;
+  }
+  35% {
+    transform: scale(1.15) rotate(25deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.6) translateY(-28px) rotate(65deg);
+    opacity: 0;
+  }
+}
+
+@keyframes bubbleFloat {
+  0% {
+    transform: scale(0.7) translateY(0px);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1.25) translateY(-18px);
+    opacity: 0;
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 3.6s ease-in-out infinite;
+}
+
+.animate-sparkle-burst {
+  animation: sparkleBurst 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-bubble-float {
+  animation: bubbleFloat 0.65s ease-out forwards;
+}
+
+/* Custom sleek scrollbars for palettes */
+.salon-scroll::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.salon-scroll::-webkit-scrollbar-track {
+  background: rgba(244, 114, 182, 0.08);
+  border-radius: 999px;
+}
+
+.salon-scroll::-webkit-scrollbar-thumb {
+  background: rgba(192, 38, 211, 0.25);
+  border-radius: 999px;
+}
+
+.salon-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(192, 38, 211, 0.45);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-slow,
+  .animate-sparkle-burst,
+  .animate-bubble-float {
+    animation: none !important;
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Princess Beauty Salon",
+  "description": "An interactive royal beauty salon game featuring facial spa treatments, skincare, makeup, hairstyles, hair coloring, manicure and pedicure nail art, princess dresses, shoes, crowns, jewelry, and before-and-after transformations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
